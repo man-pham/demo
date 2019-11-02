@@ -1,0 +1,27 @@
+a:hover{
+    text-decoration: none;
+
+}
+
+.card {
+    border: none;
+}
+.card-body{
+    padding-left:0;
+}
+.card-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: green;
+}
+.card-title {
+    font-size: 19px;
+    margin: 3px 0;
+}
+.card-text{
+    font-size: 14px;
+    font-weight: 300;
+    color: gray;
+    margin-bottom: 0;
+}

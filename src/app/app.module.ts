@@ -1,15 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
-import {HeaderComponent} from './components/header/header.component'
+import {HeaderComponent} from './components/header/header.component';
+import { RentalComponent} from './components/rental/rental.component';
+
+import {RentalModule} from './components/rental/rental.module';
+const routes: Routes = [
+  {path: '', redirectTo: '/rentals', pathMatch: 'full'},
+
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    RentalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
