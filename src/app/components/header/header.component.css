@@ -1,0 +1,21 @@
+.navbar {
+    padding:17px;
+    margin-bottom:40px;
+}
+.navbar .input-search{
+    height: 50px;
+    width: 300px;
+}
+.navbar .navbar-brand{
+    margin-right: 30px;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: crimson;
+}
+
+.navbar .btn-search:hover  {
+   background-color: transparent;
+    border-color: crimson;
+    color:crimson;
+}
