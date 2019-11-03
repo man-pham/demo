@@ -2,8 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
+## About project
+Feature: login , register, authencation, create rental, booking rental, manage booking, search. 
+
 ## Development server
 
+$ npm install
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
