@@ -1,0 +1,47 @@
+<div class="booking">
+    <h3 class="booking-price">{{rental.dailyRate | number}} VND/<span class="booking-per-night">ngày</span></h3>
+    <hr>
+    <form #bookingForm="ngForm">
+    <label>Ngày đặt</label>
+    <input type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)"
+    />
+       
+    <div class="form-group">
+      <label for="guests">Số khách</label>
+      <input [(ngModel)]="newBooking.guests" 
+              type="number" 
+              name="guests" 
+              class="form-control" 
+              id="guests" 
+              aria-describedby="emailHelp"
+              min="1" max="{{rental.bedrooms + 4}}"
+               placeholder="1">
+    </div>
+  </form>
+    <button  (click)="openConfirmModal(content)" class="btn btn-danger btn-confirm btn-block">Đặt nhà</button>
+    <hr>
+    <p class="booking-note-title">Ngôi nhà này rất tuyệt, hãy đặt ngay!</p>
+    <p class="booking-note-text">
+      Hơn 100 người đã check-in ngôi nhà này.
+    </p>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Confirm Booking <p>From: {{newBooking.startAt}}. <br>To: {{newBooking.endAt}}</p></h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <em>{{newBooking.days}}</em> ngày -  
+          <em> {{rental.dailyRate  | number}}</em> VND/ngày
+          <p>Số khách: <em>{{newBooking.guests}}</em></p>
+          <p>Giá: <em>{{newBooking.totalPrice | number}}VND</em></p>
+          <p>Hãy kiểm tra thông tin lại một lần nữa!</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-uit" (click)="showSuccess()" (click)="c('Close click')">Confirm</button>
+        <button type="button" class="btn btn-uit" (click)="c('Close click')">Close</button>
+      </div>
+  </ng-template>

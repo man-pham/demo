@@ -1,19 +1,51 @@
-<p>
-  {{rental.id}}
-</p>
+<section id="rentalDetails" *ngIf="rental">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{rental.image}}" alt="">
+      </div>
+      <div class="col-md-6">
+        <app-map [location]=""></app-map>
+      </div>
+    </div>
+  </div>
+  <div class="details-section">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="rental">
+          <h2 class="rental-type {{rental.category}}">{{rental.shared ? 'Shared' : 'Whole'}} {{rental.category}}</h2>
+          <h1 class="rental-title">{{rental.title}}</h1>
+          <h2 class="rental-city">{{rental.city | ucwords}}</h2>
+          <div class="rental-room-info">
+              <span><i class="fa fa-building"></i>{{rental.bedrooms}} phòng ngủ</span>
+              <span><i class="fa fa-user"></i> {{rental.bedrooms + 4}} khách</span>
+              <span><i class="fa fa-bed"></i> {{rental.bedrooms + 2}} giường</span>
+          </div>
+          <p class="rental-description">
+              {{rental.description | uppercase}}
+          </p>
+          <hr>
+          <div class="rental-assets">
+            <h3 class="title">Tài sản</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <span><i class="fa fa-asterisk"></i> Máy lạnh</span>
+                <span><i class="fa fa-thermometer"></i> Lò vi sóng</span>
+                <span><i class="fa fa-location-arrow"></i> Bàn là</span>
+              </div>
+              <div class="col-md-6">
+                <span><i class="fa fa-desktop"></i> Tủ lạnh</span>
+                <span><i class="fa fa-cube"></i> Máy rửa chén</span>
+                <span><i class="fa fa-cube"></i> Máy giặt</span>
 
-<p>
-    {{rental.title}}
-  </p>
-
-  <p>
-      {{rental.city}}
-    </p>
-
-    <p>
-        {{rental.description}}
-      </p>
-
-      <p>
-          {{rental.dailyRate}}
-        </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <app-rental-detail-booking [rental]="rental"  ></app-rental-detail-booking>
+      </div>
+    </div>
+  </div>
+</section>
