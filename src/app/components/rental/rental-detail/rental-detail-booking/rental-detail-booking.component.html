@@ -7,7 +7,7 @@
     />
        
     <div class="form-group">
-      <label for="guests">Số khách</label>
+      <label for="guests">Số người ở</label>
       <input [(ngModel)]="newBooking.guests" 
               type="number" 
               name="guests" 
@@ -15,7 +15,7 @@
               id="guests" 
               aria-describedby="emailHelp"
               min="1" max="{{rental.bedrooms + 4}}"
-               placeholder="1">
+               placeholder="">
     </div>
   </form>
     <button  (click)="openConfirmModal(content)" class="btn btn-danger btn-confirm btn-block">Đặt nhà</button>
@@ -34,9 +34,9 @@
         </button>
       </div>
       <div class="modal-body">
-          <em>{{newBooking.days}}</em> ngày -  
+          <em>{{newBooking.days}}</em> ngày |  
           <em> {{rental.dailyRate  | number}}</em> VND/ngày
-          <p>Số khách: <em>{{newBooking.guests}}</em></p>
+          <p>Số người ở: <em>{{newBooking.guests}}</em></p>
           <p>Giá: <em>{{newBooking.totalPrice | number}}VND</em></p>
           <p>Hãy kiểm tra thông tin lại một lần nữa!</p>
       </div>

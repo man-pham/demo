@@ -11,9 +11,13 @@ import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManageModule } from './components/manage/manage-booking/manage.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/rentals', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home',component: HomeComponent},
 
 ];
 
@@ -21,6 +25,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent
     
   ],
   imports: [
@@ -32,7 +37,9 @@ const routes: Routes = [
     RentalModule,
     AuthModule,
     NgbModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ManageModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

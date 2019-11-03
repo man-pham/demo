@@ -11,6 +11,8 @@
 	color: #bf1818;
 }
 
+
+
 .btn-uit {
 	background-color:#F44336;
 	border-color:#F44336;
@@ -18,18 +20,22 @@
 	
 	font-size: 20px;
 }
-	.btn-uit:hover {
+.btn-uit:hover {
 	  border-color: #F44336 !important;
 	  background-color: #F44336 !important;
 	}
-	.image-container {
+
+
+.image-container {
 		position: relative;
 	}
-	.image-container  img {
+.image-container  img {
 		  width: 100%;
 		  border-radius: 5px;
 		}
-	.catchphrase {
+
+
+.catchphrase {
 			text-align: center;
 			font-size: 42px;
 			position: absolute;
@@ -38,4 +44,7 @@
 			background-color: rgba(0,0,0, 0.5);
 			margin-top: 50px;
 			letter-spacing: 1px;
+		  }
+.clickable {
+			cursor: pointer;
 		  }

@@ -1,6 +1,6 @@
 .navbar {
     padding:17px;
-    margin-bottom:40px;
+  
 }
 .navbar .input-search{
     height: 50px;
@@ -13,9 +13,21 @@
     letter-spacing: 1px;
     color: crimson;
 }
-
+.navbar .nav-item {
+    font-size: 14px;
+  }
 .navbar .btn-search:hover  {
    background-color: transparent;
     border-color: crimson;
+    color:crimson;
+}
+.dropdown-item {
+    font-size: 14px;
+  }
+  .dropdown-item:active, .dropdown-item:focus {
+    background-color: crimson;
+  }
+  
+.navbar a:hover {
     color:crimson;
 }

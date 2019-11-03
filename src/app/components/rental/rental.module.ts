@@ -12,6 +12,9 @@ import { AuthGuard } from '../auth/shared/auth.guard';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
 import { FormsModule } from '@angular/forms';
+import { RentalSearchComponent } from './rental-search/rental-search.component';
+import { RentalCreateComponent } from './rental-create/rental-create.component';
+
 const routes: Routes = [
   {path: 'rentals', 
   component: RentalComponent,
@@ -19,7 +22,12 @@ const routes: Routes = [
     {
       path:'', component: RentalListComponent
     },
-    {path:':rentalId', component: RentalDetailComponent, canActivate: [AuthGuard]}
+    {
+      path:'new', component: RentalCreateComponent
+    },
+    {path:':rentalId', component: RentalDetailComponent, canActivate: [AuthGuard]},
+    {path:':city/homes', component: RentalSearchComponent},
+   
   ]
 
 },
@@ -39,7 +47,10 @@ const routes: Routes = [
     RentalListItemComponent,
     RentalComponent,
     RentalDetailComponent,
-    RentalDetailBookingComponent
+    RentalDetailBookingComponent,
+    RentalSearchComponent,
+    RentalCreateComponent,
+   
 
   ]
 })

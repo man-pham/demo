@@ -1,0 +1,30 @@
+<section id="userBookings" class="container">
+    <h1 class="page-title">Danh sách nhà đã đặt</h1>
+    <div class="row">
+      <ng-container *ngIf="bookings && bookings.length > 0">
+        <div *ngFor="let booking of bookings" class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">
+              {{booking.rental ? booking.rental.category : 'Deleted Rental'}}
+            </div>
+            <div class="card-block">
+              <ng-container *ngIf="booking.rental">
+                <h4 class="card-title">{{booking.rental.title}} - {{booking.rental.city | ucwords}} </h4>
+                <p class="card-text booking-desc"> {{booking.rental.description}}</p>
+              </ng-container>
+              <p class="card-text booking-days"> {{booking.startAt }} - {{booking.endAt }} | {{booking.days}} days</p>
+              <p class="card-text"><span>Giá: </span> <span class="booking-price-value">{{booking.totalPrice | number}} VND</span></p>
+              <a  class="btn btn-uit" routerLink="/rentals/{{booking.rental.id}}">Go to Rental</a>
+            </div>
+            <div class="card-footer text-muted">
+              Được tạo vào ngày {{booking.createdAt}}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div *ngIf="bookings && bookings.length === 0" class="alert alert-warning">
+        Hiện tại bạn chưa đặt nhà nào cả.
+        <a class="btn btn-uit" routerLink="/rentals">Danh sách nhà đang cho thuê</a>
+      </div>
+    </div>
+  </section>

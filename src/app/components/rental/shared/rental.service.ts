@@ -11,7 +11,7 @@ export class RentalService {
     city: "Hồ Chí Minh",
     street: "Quận thủ đức",
     category: "apartment",
-    image: "http://via.placeholder.com/350x250",
+    image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
     bedrooms: 3,
     description: "Căn hộ này đẹp",
     dailyRate: 900000,
@@ -24,7 +24,7 @@ export class RentalService {
     city: "Hà Nội",
     street: "Ba vì",
     category: "condo",
-    image: "http://via.placeholder.com/350x250",
+    image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
     bedrooms: 2,
     description: "Căn hộ rất đẹp",
     dailyRate: 1200000,
@@ -37,7 +37,7 @@ export class RentalService {
     city: "Khánh hòa",
     street: "Nha trang",
     category: "condo",
-    image: "http://via.placeholder.com/350x250",
+    image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
     bedrooms: 2,
     description: "Căn hộ rất xinh",
     dailyRate: 3000000,
@@ -50,7 +50,7 @@ export class RentalService {
     city: "Đà nẵng",
     street: "Hội An",
     category: "house",
-    image: "http://via.placeholder.com/350x250",
+    image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
     bedrooms: 9,
     description: "Căn hộ tuyệt đẹp",
     dailyRate: 2000000,
@@ -75,6 +75,19 @@ public getRentals(): Observable<Rental[]> {
       }, 500);
     });
   }
+  public getRentalsByCity(city: string): Observable<Rental[]> {
 
+    return new Observable<Rental[]>((observer) => {
+
+      setTimeout(() => {
+        const foundRental = this.rentals.filter((rental) => {
+          return rental.city.toLowerCase() == city.toLowerCase();
+        });
+        console.log(foundRental);
+        observer.next(foundRental);
+      }, 500);
+    });
+  }
+  
 
 }
